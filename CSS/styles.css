@@ -8,28 +8,29 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
 /* Estilos de la sección de la galería */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    mix-blend-mode: luminosity;
+    max-width: 100%;
+    gap: 1.25rem;
     justify-items: center;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    border-radius: 25px;
-    background-color: white;
 }
 
 .image-grid img {
-    max-width: 100%;
-    max-height: 300px;
+    max-width: 100%; /* Hacer que la imagen sea flexible */
+    height: auto; /* Mantener la proporción */
     border-radius: 40px;
     object-fit: cover;
-    display: block;
-    margin: 0 auto;
 }
 
 /* Estilo específico para la imagen horizontal */
@@ -213,40 +214,37 @@ body {
 }
 
 /* Estilos responsive */
-@media (max-width: 1024px) {
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 768px) {
     .title {
-        font-size: 80px;
-        margin-left: 20px;
+        font-size: 5rem; /* Usar rem para un ajuste relativo */
+        margin-left: 1.25rem;
     }
 
     .button-group {
-        margin-left: 20px;
+        margin-left: 1.25rem;
         margin-top: 0;
     }
 
     .button {
-        font-size: 16px;
-        padding: 10px 20px;
+        font-size: 1rem;
+        padding: 0.625rem 1.25rem;
         border-radius: 10px;
     }
 
     .image-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.625rem;
     }
 
     .image-grid img {
-        max-height: 200px;
+        width: 100%;
+        border-radius: 20px;
     }
+}
 
-    .image-grid img.horizontal {
-        grid-column: span 1; 
-        max-height: 100px;
-        object-fit: cover;
+/* Puedes agregar más media queries para otros puntos de interrupción si es necesario */
+@media (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* Una sola columna para pantallas muy pequeñas */
     }
 }
