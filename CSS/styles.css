@@ -15,16 +15,12 @@ body {
 .image-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    mix-blend-mode: luminosity;
-    max-width: 1000px;
-    padding: 0;
     gap: 20px;
-    justify-items: center;
+    max-width: 100%;
 }
 
 .image-grid img {
-    width: 400px;
-    height: 400px;
+    max-width: 100%;
     border-radius: 40px;
     object-fit: cover;
 }
@@ -315,22 +311,38 @@ body {
 }
 
 /* Estilos responsive */
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
     .image-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Imágenes en 2 columnas para tablets */
     }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .title {
         font-size: 80px;
         margin-left: 20px;
     }
+
     .button-group {
         margin-left: 20px;
+        margin-top: 0;
     }
+
     .button {
         font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 10px;
     }
+
+    .image-grid {
+        grid-template-columns: 1fr; /* Imágenes en 1 sola columna para móviles */
+    }
+
+    .image-grid img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+    }
+}
 }
 
