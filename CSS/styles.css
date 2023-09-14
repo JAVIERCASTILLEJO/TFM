@@ -26,19 +26,6 @@ body {
     object-fit: cover; 
 
   }
-
-@media (max-width: 768px) {
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas en pantallas pequeñas */
-    }
-}
-
-@media (max-width: 480px) {
-    .image-grid {
-        grid-template-columns: 1fr; /* Una sola columna en pantallas muy pequeñas */
-    }
-}
-
   
   /* Estilos del header */
   .header-container {
@@ -400,6 +387,19 @@ body {
     border-radius: 20px;
   }
 }
+
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas muy pequeñas */
+    }
+}
+
 
 
 
