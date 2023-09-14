@@ -21,7 +21,7 @@ body {
   
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Esto crea tantas columnas como sea posible con un mínimo de 250px por columna */
+    grid-template-columns: repeat(3, 1fr); /* 3 imágenes por fila */
     gap: 20px;
     justify-items: center;
 }
@@ -385,6 +385,12 @@ body {
     height: 250px;
     border-radius: 20px;
   }
+}
+
+@media (max-width: 1024px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 imágenes por fila */
+    }
 }
 
 @media (max-width: 768px) {
