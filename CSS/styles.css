@@ -12,16 +12,12 @@ body {
   }
   
   /* Estilos de la sección de la galería */
-  .image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    mix-blend-mode: luminosity;
-    max-width: 1000px;
-    padding: 0px 0px 0px 0px;
-    gap: 20px 20px;
-    justify-items: center;
-    
-  }
+  .image-grid img {
+    max-width: 100%; /* Hace que la imagen sea responsiva */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 40px;
+    object-fit: cover; 
+}
   
   .image-grid img {
     width: 400px;
@@ -30,6 +26,19 @@ body {
     object-fit: cover; 
 
   }
+
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas muy pequeñas */
+    }
+}
+
   
   /* Estilos del header */
   .header-container {
